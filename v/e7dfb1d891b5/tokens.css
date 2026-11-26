@@ -1,0 +1,77 @@
+/* ملف الهوية الوحيد: الخط والألوان والمقاسات. مستوحى من «زياراتي» القديم.
+   النهاري هو الأصل دائماً (حتى لو كان الجوال على الليلي)، والليلي باختيار المستخدم فقط: <html data-theme="dark"> */
+
+/* الخط داخل الموقع: IBM Plex Sans Arabic (رخصة OFL في fonts/OFL.txt). ثلاثة أوزان، والنص يظهر فوراً بخط النظام حتى يكتمل */
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/plex-arabic-400.woff2) format("woff2");
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/plex-arabic-600.woff2) format("woff2");
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/plex-arabic-700.woff2) format("woff2");
+  unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/plex-latin-400.woff2) format("woff2");
+  unicode-range:U+0000-00FF,U+2000-206F,U+2212,U+FEFF}
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/plex-latin-600.woff2) format("woff2");
+  unicode-range:U+0000-00FF,U+2000-206F,U+2212,U+FEFF}
+@font-face{font-family:"Plex Arabic";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/plex-latin-700.woff2) format("woff2");
+  unicode-range:U+0000-00FF,U+2000-206F,U+2212,U+FEFF}
+
+:root{
+  color-scheme:light;
+  --font:"Plex Arabic",system-ui,-apple-system,"SF Arabic","Geeza Pro","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;
+
+  /* الأساس: الأخضر المسجدي والذهبي من القديم */
+  --brand:#1f5a4c; --brand-2:#246b58; --brand-ink:#ffffff; --brand-soft:#e2eee9; --brand-deep:#163f35;
+  --bar:#1f5a4c; --bar-ink:#ffffff; --bar-ink-2:rgba(255,255,255,.82);
+  --gold:#b8893b; --gold-soft:#f6eddc; --gold-ink:#6e4e14;
+
+  /* الورق والسطوح والحبر */
+  --paper:#f3f5f2; --surface:#ffffff; --surface-2:#f8faf8; --sunk:#e9eeeb;
+  --ink:#15211d; --ink-2:#3d4c45; --ink-3:#56655e; --line:#dde5e1; --line-2:#c3cfc9;
+
+  /* ألوان الحالة (كل لون نص على خلفيته الناعمة ≥ 4.5:1) */
+  --ok:#17703d;  --ok-soft:#e1f2e7;
+  --warn:#7f5200; --warn-soft:#fbefdc;
+  --bad:#b02a20; --bad-soft:#fbe6e3;
+  --info:#1a56ad; --info-soft:#e3edfb;
+  /* الاختيار المؤكد (زر التقييم المختار) وعدّاد مدة الزيارة (2026-11-25) */
+  --sel:#17703d; --sel-ink:#ffffff; --sel-ring:#0f5a2f;
+  --timer-over:#b45309; --timer-over-soft:#fdeedd;
+
+  /* ألوان الرسوم */
+  --ch-1:#2c7a64; --ch-2:#c8963f; --ch-3:#8fb5a8; --ch-4:#5b6a72; --ch-track:#e6ece9;
+
+  /* المسافات والزوايا والظلال */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px; --s6:24px; --s8:32px;
+  --r-s:10px; --r-m:16px; --r-l:22px; --r-xl:28px; --r-pill:999px;
+  --shadow:0 1px 2px rgba(21,33,29,.05),0 6px 18px -10px rgba(21,33,29,.16);
+  --shadow-lg:0 -10px 40px -10px rgba(21,33,29,.35);
+  --scrim:rgba(10,20,17,.48);
+
+  /* النصوص (واضحة للجوال) */
+  --fs-xs:12.5px; --fs-s:14px; --fs-m:16px; --fs-l:17.5px; --fs-xl:20px; --fs-2xl:26px; --fs-3xl:44px;
+
+  /* اللمس والهيكل */
+  --tap:52px; --top-h:56px; --tab-h:64px; --maxw:640px;
+  --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
+  --dur:180ms; --ease:cubic-bezier(.2,.8,.3,1);
+}
+
+/* الليلي: باختيار المستخدم فقط */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --brand:#3e9c82; --brand-2:#6cc7aa; --brand-ink:#05140f; --brand-soft:#173a31; --brand-deep:#0f2a23;
+  --bar:#122a23; --bar-ink:#e8f2ee; --bar-ink-2:rgba(232,242,238,.78);
+  --gold:#d6a654; --gold-soft:#3a2d14; --gold-ink:#f2cd85;
+  --paper:#0d1412; --surface:#151f1b; --surface-2:#1a2621; --sunk:#212e28;
+  --ink:#e7efeb; --ink-2:#c3d0ca; --ink-3:#9aaba3; --line:#26342e; --line-2:#36473f;
+  --ok:#6fd49c;  --ok-soft:#14331f;
+  --warn:#f0bd5e; --warn-soft:#3a2b0e;
+  --bad:#ff9087; --bad-soft:#3d1a17;
+  --info:#8ab8ff; --info-soft:#15284a;
+  --sel:#3fb874; --sel-ink:#04140b; --sel-ring:#8be3b2;
+  --timer-over:#f6a04d; --timer-over-soft:#3b2410;
+  --ch-1:#4fb393; --ch-2:#d9a957; --ch-3:#2f5c50; --ch-4:#7d8d95; --ch-track:#24312b;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  --shadow-lg:0 -10px 40px -10px rgba(0,0,0,.7);
+  --scrim:rgba(0,0,0,.6);
+}
